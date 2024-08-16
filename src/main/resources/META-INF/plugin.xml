@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>com.roeniss.plugin.requestMappingSafeDelete</id>
+    <name>Request Mapping Safe Delete</name>
+
+    <vendor email="roeniss2@gmail.com" url="https://github.com/roeniss">Roeniss Moon</vendor>
+
+    <description>
+        Copy class level @RequestMapping value, delete the annotation, and inject it into method level Mapping annotations.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="com.roeniss.plugin.requestMappingSafeDelete" displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <action id="com.roeniss.plugin.requestMappingSafeDelete.AppAction"
+                class="com.roeniss.plugin.requestMappingSafeDelete.AppAction"
+                text="Safe Delete @RequestMapping"
+                description="Copy class level @RequestMapping value, delete the annotation, and inject it into method level Mapping annotations.">
+            <synonym text="SDR"/>
+            <add-to-group group-id="RefactoringMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <depends>
+        org.jetbrains.kotlin
+    </depends>
+
+</idea-plugin>
